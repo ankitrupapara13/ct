@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script language="javascript">
+	function onLoad() {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				document.getElementById("demo").innerHTML = xhr.responseText;
+
+			}
+		}
+		var data = document.getElementById("name").value;
+		xhr.open('GET', './demo?data=' + data, true);
+		xhr.send();
+	}
+
+	function onUpdate() {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				document.getElementById("demo").innerHTML = xhr.responseText;
+
+			}
+		}
+		var data = document.getElementById("name").value;
+		xhr.open('PUT', './demo?data=' + data, true);
+		xhr.send();
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="name">
+	<div id="demo"></div>
+	<button onclick="onLoad()">Get Data via AJAX</button>
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script language="javascript">
+      function onLoad() {
+    	  console.log("GET request")
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    document.getElementById("demo").innerHTML = xhr.responseText;
+                }
+          }
+          var data = document.getElementById("name").value;
+          xhr.open('GET', './demo?data='+data, true);
+          xhr.send();
+      }
+      function onUpdate() {
+    	  console.log("PUT request")
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    document.getElementById("demo").innerHTML = xhr.responseText;
+                }
+          }
+          var data = document.getElementById("name").value;
+          xhr.open('PUT', './demo?data='+data, true);
+          xhr.send();
+      }
+    </script>
+  </head>
+  <body>
+  	<input type="text" id="name"/>
+    <div id="demo"></div>
+    <button onClick="onLoad()">Get Data via AJAX</button>
+    <button onClick="onUpdate()">Put Data via AJAX</button>
+  </body>
+</html>
+
+-->

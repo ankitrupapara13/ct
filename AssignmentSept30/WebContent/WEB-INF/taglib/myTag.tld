@@ -1,0 +1,34 @@
+<taglib version="2.0" xmlns="http://java.sun.com/xml/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+
+	<tlib-version>2.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>quote</short-name>
+	<uri>http://ankit.com</uri>
+	<description>
+		This tag library contains several tag extensions
+		useful for
+		formatting content for HTML.
+	</description>
+	<tag>
+		<name>myTag</name>
+		<tag-class>com.hsbc.custom.MyCustomTag</tag-class>
+		<attribute>
+			<name>query</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>database</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>username</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>password</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>
